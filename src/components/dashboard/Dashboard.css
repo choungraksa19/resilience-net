@@ -1,0 +1,224 @@
+.dashboard-page {
+  max-width: 1100px;
+}
+
+/* Welcome */
+.welcome-banner {
+  margin-bottom: 1.75rem;
+}
+
+.welcome-banner h1 {
+  margin: 0 0 0.25rem;
+  color: #1f2a24;
+  font-size: 1.9rem;
+}
+
+.welcome-banner p {
+  color: #6b7a70;
+  margin: 0;
+}
+
+/* Shared card */
+.dashboard-card {
+  background-color: #fff;
+  border: 1px solid #e4e9e5;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.card-title {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: #1f2a24;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #2f7d4f;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* Grid layout for top row */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Health summary */
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.health-stat {
+  text-align: center;
+  border-radius: 8px;
+  padding: 0.9rem 0.5rem;
+}
+
+.health-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.health-label {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.status-healthy {
+  background-color: #eaf5ee;
+  color: #2f7d4f;
+}
+
+.status-attention {
+  background-color: #fdf3e0;
+  color: #b8860b;
+}
+
+.status-critical {
+  background-color: #fdeceb;
+  color: #c0392b;
+}
+
+/* Weather */
+.weather-condition {
+  font-weight: 600;
+  color: #2f7d4f;
+  margin: 0 0 0.75rem;
+}
+
+.weather-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.weather-stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #eef1ef;
+  padding-bottom: 0.4rem;
+}
+
+.weather-label {
+  color: #6b7a70;
+}
+
+.weather-value {
+  font-weight: 600;
+  color: #1f2a24;
+}
+
+/* Recommendation */
+.recommendation-text {
+  color: #4b5c52;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Recent scans table */
+.recent-scans {
+  margin-bottom: 1.5rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.scans-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scans-table th,
+.scans-table td {
+  text-align: left;
+  padding: 0.65rem 0.5rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #eef1ef;
+}
+
+.scans-table th {
+  color: #6b7a70;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.status-badge {
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Quick actions */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+}
+
+.quick-actions-grid .btn {
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .health-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scans-table thead {
+    display: none;
+  }
+
+  .scans-table,
+  .scans-table tbody,
+  .scans-table tr,
+  .scans-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .scans-table tr {
+    border: 1px solid #eef1ef;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .scans-table td {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .scans-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7a70;
+  }
+}
