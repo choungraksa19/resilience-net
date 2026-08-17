@@ -11,9 +11,15 @@ export default function ResultCard({ result, onScanAnother, onSave }: ResultCard
   return (
     <div className="result-card">
       <h2>Analysis Result</h2>
-      <p className="result-disclaimer">
-        This is a simulated result for demonstration purposes and is not a real AI diagnosis.
-      </p>
+      {result.isSimulated ? (
+         <p className="result-disclaimer">
+           ⚠ Simulated result — not a real AI diagnosis. Real AI analysis is not currently configured.
+        </p>
+      ) : (
+        <p className="result-disclaimer result-disclaimer-real">
+         ✓ Analyzed by a real AI vision model.
+        </p>
+      )}
 
       <div className="result-grid">
         <div className="result-row">

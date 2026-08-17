@@ -285,4 +285,8 @@
     width: 100%;
     text-align: center;
   }
+  .result-disclaimer-real {
+    background-color: #eaf5ee;
+    color: #2f7d4f;
+  }
 }
