@@ -1,26 +1,16 @@
-const features = [
-  {
-    title: "AI Disease Diagnosis",
-    text: "Identify crop diseases quickly from an uploaded image.",
-  },
-  {
-    title: "Treatment Recommendations",
-    text: "Get guidance on how to treat and manage identified issues.",
-  },
-  {
-    title: "Weather Forecasts",
-    text: "Stay informed with weather conditions relevant to your farm.",
-  },
-  {
-    title: "Farming Suggestions",
-    text: "Receive practical suggestions to improve crop health over time.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Features() {
+  const { t } = useTranslation();
+
+  const features = [1, 2, 3, 4].map((n) => ({
+    title: t(`home.feature${n}Title`),
+    text: t(`home.feature${n}Text`),
+  }));
+
   return (
     <section className="section features-section">
-      <h2 className="section-title">Features</h2>
+      <h2 className="section-title">{t("home.featuresTitle")}</h2>
       <div className="features-grid">
         {features.map((f) => (
           <div className="feature-card" key={f.title}>

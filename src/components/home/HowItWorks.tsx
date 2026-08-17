@@ -1,15 +1,12 @@
-const steps = [
-  "Farmer",
-  "Upload Crop Image",
-  "AI Analyzes Disease",
-  "Receive Recommendations",
-  "Improve Crop Health",
-];
+import { useTranslation } from "react-i18next";
 
 export default function HowItWorks() {
+  const { t } = useTranslation();
+  const steps = [1, 2, 3, 4, 5].map((n) => t(`home.step${n}`));
+
   return (
     <section className="section how-it-works-section" id="how-it-works">
-      <h2 className="section-title">How It Works</h2>
+      <h2 className="section-title">{t("home.howItWorksTitle")}</h2>
       <div className="steps-flow">
         {steps.map((step, i) => (
           <div className="step-item" key={step}>

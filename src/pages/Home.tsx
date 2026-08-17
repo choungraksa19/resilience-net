@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Hero from "../components/home/Hero";
 import Problem from "../components/home/Problem";
 import HowItWorks from "../components/home/HowItWorks";

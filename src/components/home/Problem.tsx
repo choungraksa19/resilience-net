@@ -1,30 +1,16 @@
-const problems = [
-  {
-    title: "Crop Disease",
-    text: "Diseases can spread quickly and are often hard to identify early without expert help.",
-  },
-  {
-    title: "Unpredictable Weather",
-    text: "Sudden weather changes make planning and protecting crops more difficult.",
-  },
-  {
-    title: "Lack of Fast Expert Advice",
-    text: "Many farmers don't have quick access to agricultural specialists when issues arise.",
-  },
-  {
-    title: "Crop Losses",
-    text: "Delayed diagnosis and treatment often leads to preventable crop damage.",
-  },
-  {
-    title: "Food-Security Risk",
-    text: "Repeated crop losses threaten the stability of local and regional food supplies.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Problem() {
+  const { t } = useTranslation();
+
+  const problems = [1, 2, 3, 4, 5].map((n) => ({
+    title: t(`home.problem${n}Title`),
+    text: t(`home.problem${n}Text`),
+  }));
+
   return (
     <section className="section problem-section">
-      <h2 className="section-title">The Problem</h2>
+      <h2 className="section-title">{t("home.problemTitle")}</h2>
       <div className="problem-grid">
         {problems.map((p) => (
           <div className="problem-card" key={p.title}>
